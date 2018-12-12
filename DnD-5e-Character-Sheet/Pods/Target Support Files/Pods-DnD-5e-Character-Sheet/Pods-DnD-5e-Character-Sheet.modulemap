@@ -1,0 +1,6 @@
+framework module Pods_DnD_5e_Character_Sheet {
+  umbrella header "Pods-DnD-5e-Character-Sheet-umbrella.h"
+
+  export *
+  module * { export * }
+}
