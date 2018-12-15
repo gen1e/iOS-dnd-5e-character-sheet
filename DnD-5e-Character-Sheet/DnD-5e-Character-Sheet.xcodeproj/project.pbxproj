@@ -15,7 +15,6 @@
 		3F420B3D21C1B77C00BDA3EF /* CoreStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B3C21C1B77C00BDA3EF /* CoreStats.swift */; };
 		3F420B3F21C1B9AD00BDA3EF /* HealthStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B3E21C1B9AD00BDA3EF /* HealthStats.swift */; };
 		3F420B4121C1BBD400BDA3EF /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B4021C1BBD400BDA3EF /* Skills.swift */; };
-		3F420B4321C1C10200BDA3EF /* SavingThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B4221C1C10200BDA3EF /* SavingThrows.swift */; };
 		3F420B4521C1C4D900BDA3EF /* Spells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B4421C1C4D900BDA3EF /* Spells.swift */; };
 		9ED586C99653CA990B2CB25E /* Pods_DnD_5e_Character_Sheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C753DB696E281EF889FF470B /* Pods_DnD_5e_Character_Sheet.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		3F420B3C21C1B77C00BDA3EF /* CoreStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreStats.swift; sourceTree = "<group>"; };
 		3F420B3E21C1B9AD00BDA3EF /* HealthStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStats.swift; sourceTree = "<group>"; };
 		3F420B4021C1BBD400BDA3EF /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
-		3F420B4221C1C10200BDA3EF /* SavingThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingThrows.swift; sourceTree = "<group>"; };
 		3F420B4421C1C4D900BDA3EF /* Spells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spells.swift; sourceTree = "<group>"; };
 		547312BE0D003B12D2319D01 /* Pods-DnD-5e-Character-Sheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnD-5e-Character-Sheet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnD-5e-Character-Sheet/Pods-DnD-5e-Character-Sheet.release.xcconfig"; sourceTree = "<group>"; };
 		C753DB696E281EF889FF470B /* Pods_DnD_5e_Character_Sheet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnD_5e_Character_Sheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +96,6 @@
 				3F420B3C21C1B77C00BDA3EF /* CoreStats.swift */,
 				3F420B3E21C1B9AD00BDA3EF /* HealthStats.swift */,
 				3F420B4021C1BBD400BDA3EF /* Skills.swift */,
-				3F420B4221C1C10200BDA3EF /* SavingThrows.swift */,
 				3F420B4421C1C4D900BDA3EF /* Spells.swift */,
 			);
 			path = models;
@@ -235,7 +232,6 @@
 			files = (
 				3F420B2021C1A30300BDA3EF /* AppDelegate.swift in Sources */,
 				3F420B3F21C1B9AD00BDA3EF /* HealthStats.swift in Sources */,
-				3F420B4321C1C10200BDA3EF /* SavingThrows.swift in Sources */,
 				3F420B3B21C1B0E000BDA3EF /* Character.swift in Sources */,
 				3F420B4121C1BBD400BDA3EF /* Skills.swift in Sources */,
 				3F420B3D21C1B77C00BDA3EF /* CoreStats.swift in Sources */,

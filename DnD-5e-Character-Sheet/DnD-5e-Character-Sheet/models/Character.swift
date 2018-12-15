@@ -27,7 +27,6 @@ class Character: Object {
     @objc dynamic var coreStats: CoreStats?
     @objc dynamic var healthStats: HealthStats?
     @objc dynamic var skills: Skills?
-    @objc dynamic var savingthrows: SavingThrows?
     @objc dynamic var spells: Spells?
     
 }

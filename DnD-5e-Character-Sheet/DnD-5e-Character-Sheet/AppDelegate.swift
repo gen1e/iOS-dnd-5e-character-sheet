@@ -18,10 +18,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let realm = try! Realm()
+        //let realm = try! Realm()
         
-        let coreStats = CoreStats(value: ["strength": 18, "dexterity": 12, "constitution": 18, "intelligence": 10, "wisdom": 11, "charisma": 9])
-        let testChar = Character(value: ["playerName" : "Regina Locicero", "characterName": "Ulf", "level": 14, "xp": 0, "characterClass": "Barbarian", "race": "Goliath", "alignment": "Nuetral", "background": "Sailor", "speed": 40, "coreStats": coreStats])
+        // Deletes everythign when I need to reset
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        let realmURLs = [
+            realmURL,
+            realmURL.appendingPathExtension("lock"),
+            realmURL.appendingPathExtension("note"),
+            realmURL.appendingPathExtension("management")
+        ]
+        for URL in realmURLs {
+            do {
+                try FileManager.default.removeItem(at: URL)
+            } catch {
+                // handle error
+            }
+        }
+        
+        let coreStats = CoreStats(value: ["strength": 18, "strengthProf": 1, "dexterity": 12, "dexterityProf": 0, "constitution": 18, "constitutionProf": 1, "intelligence": 10, "intelligenceProf": 0, "wisdom": 11, "wisdomProf": 0, "charisma": 9, "charismaProf": 0])
+        let healthStats = HealthStats(value: ["currentHP": 104, "maxHP": 106, "hitDiceType": "d12", "hitDiceMax": 14, "hitDiceCurr": 13])
+        let testChar = Character(value: ["playerName" : "Regina Locicero", "characterName": "Ulf", "level": 14, "xp": 0, "characterClass": "Barbarian", "race": "Goliath", "alignment": "Nuetral", "background": "Sailor", "speed": 40, "coreStats": coreStats, "healthStats": healthStats])
         print(testChar.characterName)
         print("Prof: \(testChar.getProficiency())")
         print("Str: \(testChar.coreStats!.strength)")
@@ -29,6 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Int Mod: \(testChar.coreStats!.getIntMod())")
         print("Wis Mod: \(testChar.coreStats!.getWisMod())")
         print("Char Mod: \(testChar.coreStats!.getCharMod())")
+        print("Health: \(testChar.healthStats!.currentHP) / \(testChar.healthStats!.maxHP)")
+        print("Str Save: \(testChar.coreStats!.getStrSave(prof: testChar.getProficiency()))")
+        print("Char Save: \(testChar.coreStats!.getCharSave(prof: testChar.getProficiency()))")
         
         return true
     }

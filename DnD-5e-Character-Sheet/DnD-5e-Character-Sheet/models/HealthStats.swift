@@ -14,6 +14,6 @@ class HealthStats: Object {
     @objc dynamic var hitDiceType = ""
     @objc dynamic var hitDiceMax = 0
     @objc dynamic var hitDiceCurr = 0
-    @objc dynamic var deathSaves = 0
-    @objc dynamic var deathFails = 0
+//    @objc dynamic var deathSaves = 0
+//    @objc dynamic var deathFails = 0
 }
