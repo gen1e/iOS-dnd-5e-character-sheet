@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let barn = Character();
-//        barn.playerName = "Susie"
-//        print(barn.playerName)
-
         let realm = try! Realm()
         
         let coreStats = CoreStats(value: ["strength": 18, "dexterity": 12, "constitution": 18, "intelligence": 10, "wisdom": 11, "charisma": 9])
@@ -29,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(testChar.characterName)
         print("Prof: \(testChar.getProficiency())")
         print("Str: \(testChar.coreStats!.strength)")
+        print("Str Mod: \(testChar.coreStats!.getStrMod())")
+        print("Int Mod: \(testChar.coreStats!.getIntMod())")
+        print("Wis Mod: \(testChar.coreStats!.getWisMod())")
+        print("Char Mod: \(testChar.coreStats!.getCharMod())")
         
         return true
     }
