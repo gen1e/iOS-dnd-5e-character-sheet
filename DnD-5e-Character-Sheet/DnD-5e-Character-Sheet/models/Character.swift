@@ -19,7 +19,10 @@ class Character: Object {
     @objc dynamic var background = ""
     @objc dynamic var speed = 0
     
-    @objc dynamic var proficiency = 0
+    public func getProficiency() -> Int {
+        let lvl = Double(level)
+        return Int(((lvl + 7.0)/4.0).rounded(.down))
+    }
     
     @objc dynamic var coreStats: CoreStats?
     @objc dynamic var healthStats: HealthStats?

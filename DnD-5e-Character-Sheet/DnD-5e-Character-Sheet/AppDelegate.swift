@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let barn = Character();
-        barn.playerName = "Susie"
-        print(barn.playerName)
+//        let barn = Character();
+//        barn.playerName = "Susie"
+//        print(barn.playerName)
+
+        let realm = try! Realm()
+        
+        let coreStats = CoreStats(value: ["strength": 18, "dexterity": 12, "constitution": 18, "intelligence": 10, "wisdom": 11, "charisma": 9])
+        let testChar = Character(value: ["playerName" : "Regina Locicero", "characterName": "Ulf", "level": 14, "xp": 0, "characterClass": "Barbarian", "race": "Goliath", "alignment": "Nuetral", "background": "Sailor", "speed": 40, "coreStats": coreStats])
+        print(testChar.characterName)
+        print("Prof: \(testChar.getProficiency())")
+        print("Str: \(testChar.coreStats!.strength)")
         
         return true
     }
