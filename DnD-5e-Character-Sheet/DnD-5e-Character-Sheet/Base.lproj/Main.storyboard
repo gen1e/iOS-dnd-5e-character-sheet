@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FwM-ky-bUd">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwM-ky-bUd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Basic Stats" id="5xz-Xn-W3G"/>
@@ -568,6 +568,7 @@
                             <constraint firstItem="CXl-M0-EEu" firstAttribute="trailing" secondItem="CBZ-sT-EGn" secondAttribute="trailing" id="IhJ-Kw-8ko"/>
                             <constraint firstItem="47i-Jv-eMM" firstAttribute="leading" secondItem="mQR-Qp-dcK" secondAttribute="leading" id="J55-cw-Rqh"/>
                             <constraint firstItem="kXY-tV-KOs" firstAttribute="top" secondItem="xLC-SV-t7g" secondAttribute="top" id="JeX-w5-YnB"/>
+                            <constraint firstItem="FwM-ky-bUd" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Kv4-cI-O9n"/>
                             <constraint firstItem="c1N-tD-0Qw" firstAttribute="baseline" secondItem="yT6-ag-IFh" secondAttribute="baseline" id="LZg-hq-PmH"/>
                             <constraint firstItem="c1N-tD-0Qw" firstAttribute="centerX" secondItem="FwM-ky-bUd" secondAttribute="centerX" id="LpC-e9-soQ"/>
                             <constraint firstItem="CBZ-sT-EGn" firstAttribute="trailing" secondItem="fvO-GK-EQC" secondAttribute="trailing" id="LwX-Ie-vkJ"/>
@@ -596,6 +597,8 @@
                             <constraint firstItem="aXW-qm-veS" firstAttribute="centerX" secondItem="47i-Jv-eMM" secondAttribute="centerX" id="bnl-0A-sjC"/>
                             <constraint firstItem="vCS-g0-dv9" firstAttribute="top" secondItem="kXY-tV-KOs" secondAttribute="bottom" constant="8" symbolic="YES" id="cI2-g2-gZ8"/>
                             <constraint firstItem="vCS-g0-dv9" firstAttribute="top" secondItem="eIm-AB-SnR" secondAttribute="top" id="eeJ-RC-h7e"/>
+                            <constraint firstItem="FwM-ky-bUd" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="f4b-kb-ZSb"/>
+                            <constraint firstItem="FwM-ky-bUd" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="ftx-kN-RDb"/>
                             <constraint firstItem="2kG-7m-AuB" firstAttribute="bottom" secondItem="CBZ-sT-EGn" secondAttribute="bottom" id="gDb-jM-Hep"/>
                             <constraint firstItem="TVg-bl-4ca" firstAttribute="leading" secondItem="RTN-bz-3KQ" secondAttribute="trailing" constant="12" id="gFk-2a-bGy"/>
                             <constraint firstItem="u2g-O3-Exu" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="iBT-Gi-ffc"/>
@@ -638,7 +641,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="skillCell" id="hcl-AS-Cr8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="skillCell" id="hcl-AS-Cr8" customClass="SkillCellVC" customModule="DnD_5e_Character_Sheet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcl-AS-Cr8" id="MaO-aZ-2gd">
@@ -646,14 +649,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SkillName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FD-ak-ae8">
-                                            <rect key="frame" x="16" y="11" width="76" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-TO-D4M">
-                                            <rect key="frame" x="100" y="11" width="21" height="21"/>
+                                            <rect key="frame" x="16" y="12" width="144" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -663,8 +659,20 @@
                                             <rect key="frame" x="312" y="6" width="49" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-TO-D4M">
+                                            <rect key="frame" x="168" y="11" width="39" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="skillModLabel" destination="beQ-TO-D4M" id="Lqs-Vw-n1M"/>
+                                    <outlet property="skillNameLabel" destination="1FD-ak-ae8" id="QKx-gV-kky"/>
+                                    <outlet property="skillProfSwitch" destination="V21-Pv-uXi" id="Kan-wn-DR9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -676,7 +684,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axW-J3-VYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1514" y="-164"/>
+            <point key="canvasLocation" x="1512.8" y="-164.16791604197903"/>
         </scene>
         <!--Skills-->
         <scene sceneID="2J2-Oq-VcY">

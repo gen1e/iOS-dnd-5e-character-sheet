@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let characters = realm.objects(Character.self)
         print(characters)
         
+        
         return true
     }
 

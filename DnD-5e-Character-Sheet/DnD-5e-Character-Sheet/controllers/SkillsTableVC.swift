@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SkillsTableVC: UITableViewController {
+    
+    var character: Character?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let realm = try! Realm()
+        let characters = realm.objects(Character.self)
+        character = characters.first
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,9 +44,102 @@ class SkillsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath) as! SkillCellVC
+        
+        let p = (character?.getProficiency())!
+        
+        var smod = 0
+        var isProf = 0
 
-        // Configure the cell...
+        switch indexPath.row {
+        case 0:
+            cell.skillNameLabel!.text = "Acrobatics"
+            smod = (character?.skills?.getAcrobatics(dexMod: (character?.coreStats?.getDexMod())!, prof: p))!
+            isProf = (character?.skills?.acrobaticsProf)!
+        case 1:
+            cell.skillNameLabel!.text = "Animal Handling"
+            smod = (character?.skills?.getAnimalHandling(wisMod: (character?.coreStats?.getWisMod())!, prof: p))!
+            isProf = (character?.skills?.animalHandlingProf)!
+        case 2:
+            cell.skillNameLabel!.text = "Arcana"
+            smod = (character?.skills?.getArcana(intMod: (character?.coreStats?.getIntMod())!, prof: p))!
+            isProf = (character?.skills?.arcanaProf)!
+        case 3:
+            cell.skillNameLabel!.text = "Athletics"
+            smod = (character?.skills?.getAlthletics(strMod: (character?.coreStats?.getStrMod())!, prof: p))!
+            isProf = (character?.skills?.athleticsProf)!
+        case 4:
+            cell.skillNameLabel!.text = "Deception"
+            smod = (character?.skills?.getDeception(charMod: (character?.coreStats?.getCharMod())!, prof: p))!
+            isProf = (character?.skills?.deceptionProf)!
+        case 5:
+            cell.skillNameLabel!.text = "History"
+            smod = (character?.skills?.getHistory(intMod: (character?.coreStats?.getIntMod())!, prof: p))!
+            isProf = (character?.skills?.historyProf)!
+        case 6:
+            cell.skillNameLabel!.text = "Insight"
+            smod = (character?.skills?.getInsight(wisMod: (character?.coreStats?.getWisMod())!, prof: p))!
+            isProf = (character?.skills?.insightProf)!
+        case 7:
+            cell.skillNameLabel!.text = "Intimidation"
+            smod = (character?.skills?.getIntimidation(charMod: (character?.coreStats?.getCharMod())!, prof: p))!
+            isProf = (character?.skills?.intimidationProf)!
+        case 8:
+            cell.skillNameLabel!.text = "Investigation"
+            smod = (character?.skills?.getInvestigation(intMod: (character?.coreStats?.getIntMod())!, prof: p))!
+            isProf = (character?.skills?.investigationProf)!
+        case 9:
+            cell.skillNameLabel!.text = "Medicine"
+            smod = (character?.skills?.getMedicine(wisMod: (character?.coreStats?.getWisMod())!, prof: p))!
+            isProf = (character?.skills?.medicineProf)!
+        case 10:
+            cell.skillNameLabel!.text = "Nature"
+            smod = (character?.skills?.getNature(intMod: (character?.coreStats?.getIntMod())!, prof: p))!
+            isProf = (character?.skills?.natureProf)!
+        case 11:
+            cell.skillNameLabel!.text = "Perception"
+            smod = (character?.skills?.getPerception(wisMod: (character?.coreStats?.getWisMod())!, prof: p))!
+            isProf = (character?.skills?.perceptionProf)!
+        case 12:
+            cell.skillNameLabel!.text = "Performance"
+            smod = (character?.skills?.getPerformance(charMod: (character?.coreStats?.getCharMod())!, prof: p))!
+            isProf = (character?.skills?.performanceProf)!
+        case 13:
+            cell.skillNameLabel!.text = "Persuasion"
+            smod = (character?.skills?.getPersuasion(charMod: (character?.coreStats?.getCharMod())!, prof: p))!
+            isProf = (character?.skills?.persuasionProf)!
+        case 14:
+            cell.skillNameLabel!.text = "Religion"
+            smod = (character?.skills?.getReligion(intMod: (character?.coreStats?.getIntMod())!, prof: p))!
+            isProf = (character?.skills?.religionProf)!
+        case 15:
+            cell.skillNameLabel!.text = "Sleight of Hand"
+            smod = (character?.skills?.getSleightOfHand(dexMod: (character?.coreStats?.getDexMod())!, prof: p))!
+            isProf = (character?.skills?.sleightOfHandProf)!
+        case 16:
+            cell.skillNameLabel!.text = "Stealth"
+            smod = (character?.skills?.getStealth(dexMod: (character?.coreStats?.getDexMod())!, prof: p))!
+            isProf = (character?.skills?.stealthProf)!
+        case 17:
+            cell.skillNameLabel!.text = "Survival"
+            smod = (character?.skills?.getSurvival(wisMod: (character?.coreStats?.getWisMod())!, prof: p))!
+            isProf = (character?.skills?.survivalProf)!
+        default:
+            print("Something went wrong")
+        }
+        
+        if smod >= 0 {
+            cell.skillModLabel!.text = "+ \(smod)"
+        }
+        else if smod < 0 {
+            cell.skillModLabel!.text = "- \(abs(smod))"
+        }
+        
+        if isProf == 1 {
+            cell.skillProfSwitch.isOn = true
+        } else {
+            cell.skillProfSwitch.isOn = false
+        }
 
         return cell
     }
