@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let realm = try! Realm()
-        
-        // Deletes everythign when I need to reset
+        // Deletes everything when I need to reset
 //        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
 //        let realmURLs = [
 //            realmURL,
@@ -35,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                // handle error
 //            }
 //        }
+        
+        let realm = try! Realm()
         
         let coreStats = CoreStats(value: ["strength": 18, "strengthProf": 1, "dexterity": 12, "dexterityProf": 0, "constitution": 18, "constitutionProf": 1, "intelligence": 10, "intelligenceProf": 0, "wisdom": 11, "wisdomProf": 0, "charisma": 9, "charismaProf": 0])
         let healthStats = HealthStats(value: ["currentHP": 104, "maxHP": 106, "hitDiceType": "d12", "hitDiceMax": 14, "hitDiceCurr": 13])
@@ -52,9 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Char Save: \(testChar.coreStats!.getCharSave(prof: testChar.getProficiency()))")
         print("Perception: \(testChar.skills!.getPerception(wisMod: testChar.coreStats!.getWisMod(), prof: testChar.getProficiency()))")
         
-        try! realm.write {
-            realm.add(testChar)
-        }
+//        try! realm.write {
+//            realm.add(testChar)
+//        }
         
         let characters = realm.objects(Character.self)
         print(characters)

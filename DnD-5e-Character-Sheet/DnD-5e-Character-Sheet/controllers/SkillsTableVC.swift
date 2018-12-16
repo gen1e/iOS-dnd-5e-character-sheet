@@ -45,6 +45,7 @@ class SkillsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "skillCell", for: indexPath) as! SkillCellVC
+        cell.id = indexPath.row
         
         let p = (character?.getProficiency())!
         

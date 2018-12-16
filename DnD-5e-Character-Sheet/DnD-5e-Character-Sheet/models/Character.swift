@@ -29,4 +29,8 @@ class Character: Object {
     @objc dynamic var skills: Skills?
     @objc dynamic var spells: Spells?
     
+    override static func primaryKey() -> String? {
+        return "characterName"
+    }
+    
 }
