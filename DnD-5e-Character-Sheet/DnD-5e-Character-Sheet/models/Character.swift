@@ -18,6 +18,8 @@ class Character: Object {
     @objc dynamic var alignment = ""
     @objc dynamic var background = ""
     @objc dynamic var speed = 0
+    @objc dynamic var ac = 0
+    
     
     public func getProficiency() -> Int {
         let lvl = Double(level)
@@ -31,6 +33,10 @@ class Character: Object {
     
     override static func primaryKey() -> String? {
         return "characterName"
+    }
+    
+    public func getInitiative() -> Int {
+        return coreStats!.getDexMod()
     }
     
 }
