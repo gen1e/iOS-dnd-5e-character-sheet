@@ -17,7 +17,7 @@
 		3F420B4121C1BBD400BDA3EF /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B4021C1BBD400BDA3EF /* Skills.swift */; };
 		3F420B4521C1C4D900BDA3EF /* Spells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B4421C1C4D900BDA3EF /* Spells.swift */; };
 		3F5EE98721C6CC51002686FF /* SkillCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EE98621C6CC51002686FF /* SkillCellVC.swift */; };
-		3F5EE98921C709EF002686FF /* EditBasicStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EE98821C709EF002686FF /* EditBasicStatsVC.swift */; };
+		3F5EE98D21C71E4C002686FF /* EditBasicStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EE98C21C71E4C002686FF /* EditBasicStatsVC.swift */; };
 		3FBFB60121C5B517006A6D93 /* BasicStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFB60021C5B517006A6D93 /* BasicStatsVC.swift */; };
 		3FBFB60321C5B537006A6D93 /* SkillsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFB60221C5B537006A6D93 /* SkillsTableVC.swift */; };
 		9ED586C99653CA990B2CB25E /* Pods_DnD_5e_Character_Sheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C753DB696E281EF889FF470B /* Pods_DnD_5e_Character_Sheet.framework */; };
@@ -36,7 +36,7 @@
 		3F420B4021C1BBD400BDA3EF /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		3F420B4421C1C4D900BDA3EF /* Spells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spells.swift; sourceTree = "<group>"; };
 		3F5EE98621C6CC51002686FF /* SkillCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCellVC.swift; sourceTree = "<group>"; };
-		3F5EE98821C709EF002686FF /* EditBasicStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBasicStatsVC.swift; sourceTree = "<group>"; };
+		3F5EE98C21C71E4C002686FF /* EditBasicStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBasicStatsVC.swift; sourceTree = "<group>"; };
 		3FBFB60021C5B517006A6D93 /* BasicStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStatsVC.swift; sourceTree = "<group>"; };
 		3FBFB60221C5B537006A6D93 /* SkillsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableVC.swift; sourceTree = "<group>"; };
 		547312BE0D003B12D2319D01 /* Pods-DnD-5e-Character-Sheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnD-5e-Character-Sheet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnD-5e-Character-Sheet/Pods-DnD-5e-Character-Sheet.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				3FBFB60021C5B517006A6D93 /* BasicStatsVC.swift */,
 				3FBFB60221C5B537006A6D93 /* SkillsTableVC.swift */,
 				3F5EE98621C6CC51002686FF /* SkillCellVC.swift */,
-				3F5EE98821C709EF002686FF /* EditBasicStatsVC.swift */,
+				3F5EE98C21C71E4C002686FF /* EditBasicStatsVC.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 				3F420B3F21C1B9AD00BDA3EF /* HealthStats.swift in Sources */,
 				3FBFB60121C5B517006A6D93 /* BasicStatsVC.swift in Sources */,
 				3F420B3B21C1B0E000BDA3EF /* Character.swift in Sources */,
-				3F5EE98921C709EF002686FF /* EditBasicStatsVC.swift in Sources */,
+				3F5EE98D21C71E4C002686FF /* EditBasicStatsVC.swift in Sources */,
 				3F420B4121C1BBD400BDA3EF /* Skills.swift in Sources */,
 				3F420B3D21C1B77C00BDA3EF /* CoreStats.swift in Sources */,
 				3F420B4521C1C4D900BDA3EF /* Spells.swift in Sources */,

@@ -669,7 +669,7 @@
         <!--Edit-->
         <scene sceneID="iF6-lH-7L2">
             <objects>
-                <viewController title="Edit" id="B9d-RE-6be" sceneMemberID="viewController">
+                <viewController title="Edit" id="B9d-RE-6be" customClass="EditBasicStatsVC" customModule="DnD_5e_Character_Sheet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gEm-CB-nNG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -947,6 +947,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YBI-Or-xKx"/>
                     </view>
+                    <connections>
+                        <outlet property="acField" destination="OEt-1n-QhZ" id="ul8-pN-wPI"/>
+                        <outlet property="charField" destination="ZGW-0d-15q" id="zaJ-4F-BQ4"/>
+                        <outlet property="charProfSwitch" destination="Opp-eC-bKp" id="mbr-4z-8yP"/>
+                        <outlet property="characterNameField" destination="lZz-RB-Gn0" id="C8Z-hB-Y6s"/>
+                        <outlet property="classField" destination="A3k-qw-dex" id="ooo-5d-7gz"/>
+                        <outlet property="conField" destination="332-TZ-ARh" id="dPg-hu-jSm"/>
+                        <outlet property="conProfSwitch" destination="fcc-fU-5FN" id="Gep-qx-Ng4"/>
+                        <outlet property="currHDField" destination="lOL-d5-U5X" id="EbK-Ef-Ma4"/>
+                        <outlet property="currHPField" destination="vv4-ZH-POT" id="ebO-Ad-Kjd"/>
+                        <outlet property="dexField" destination="dil-N5-0WH" id="gU8-vt-gOM"/>
+                        <outlet property="dexProfSwitch" destination="R9v-S7-aFR" id="pjg-SS-AWI"/>
+                        <outlet property="hdtypeField" destination="Y0h-77-tpw" id="gtU-cb-Qh6"/>
+                        <outlet property="intField" destination="BrV-HT-HY6" id="FsF-Tn-CB6"/>
+                        <outlet property="intProfSwitch" destination="d5g-c7-rwR" id="t9i-8e-sCB"/>
+                        <outlet property="lvlField" destination="sUX-MJ-m8M" id="NQh-rq-esH"/>
+                        <outlet property="maxHDField" destination="K0n-gk-hDs" id="X3X-Ne-ucw"/>
+                        <outlet property="maxHPField" destination="kfT-Uj-6h6" id="b8O-vO-Bm2"/>
+                        <outlet property="raceField" destination="eR9-KW-uvA" id="BzB-cQ-7OM"/>
+                        <outlet property="speedField" destination="pPK-Hr-N7q" id="ISK-ri-JaD"/>
+                        <outlet property="strField" destination="6iR-by-1Da" id="y9x-Fz-w4M"/>
+                        <outlet property="strProfSwitch" destination="5QN-dX-jX1" id="9Zw-3Z-BG8"/>
+                        <outlet property="wisField" destination="Fex-kt-lQ2" id="ajG-qG-hgy"/>
+                        <outlet property="wisProfSwitch" destination="RB9-eQ-NcA" id="jJ7-8U-f13"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juo-Po-dfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
