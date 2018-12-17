@@ -18,6 +18,9 @@
 		3F420B4521C1C4D900BDA3EF /* Spells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F420B4421C1C4D900BDA3EF /* Spells.swift */; };
 		3F5EE98721C6CC51002686FF /* SkillCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EE98621C6CC51002686FF /* SkillCellVC.swift */; };
 		3F5EE98D21C71E4C002686FF /* EditBasicStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EE98C21C71E4C002686FF /* EditBasicStatsVC.swift */; };
+		3F5EE99E21C742EB002686FF /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5EE99C21C742EB002686FF /* about.png */; };
+		3F5EE99F21C742EB002686FF /* bar_chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5EE99D21C742EB002686FF /* bar_chart.png */; };
+		3F5EE9A121C74327002686FF /* user_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5EE9A021C74327002686FF /* user_male.png */; };
 		3FBFB60121C5B517006A6D93 /* BasicStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFB60021C5B517006A6D93 /* BasicStatsVC.swift */; };
 		3FBFB60321C5B537006A6D93 /* SkillsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFB60221C5B537006A6D93 /* SkillsTableVC.swift */; };
 		9ED586C99653CA990B2CB25E /* Pods_DnD_5e_Character_Sheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C753DB696E281EF889FF470B /* Pods_DnD_5e_Character_Sheet.framework */; };
@@ -37,6 +40,9 @@
 		3F420B4421C1C4D900BDA3EF /* Spells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spells.swift; sourceTree = "<group>"; };
 		3F5EE98621C6CC51002686FF /* SkillCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCellVC.swift; sourceTree = "<group>"; };
 		3F5EE98C21C71E4C002686FF /* EditBasicStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBasicStatsVC.swift; sourceTree = "<group>"; };
+		3F5EE99C21C742EB002686FF /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		3F5EE99D21C742EB002686FF /* bar_chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_chart.png; sourceTree = "<group>"; };
+		3F5EE9A021C74327002686FF /* user_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_male.png; sourceTree = "<group>"; };
 		3FBFB60021C5B517006A6D93 /* BasicStatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicStatsVC.swift; sourceTree = "<group>"; };
 		3FBFB60221C5B537006A6D93 /* SkillsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableVC.swift; sourceTree = "<group>"; };
 		547312BE0D003B12D2319D01 /* Pods-DnD-5e-Character-Sheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnD-5e-Character-Sheet.release.xcconfig"; path = "Pods/Target Support Files/Pods-DnD-5e-Character-Sheet/Pods-DnD-5e-Character-Sheet.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		3F420B1E21C1A30300BDA3EF /* DnD-5e-Character-Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				3F5EE98F21C74100002686FF /* resources */,
 				3F420B3421C1A6D900BDA3EF /* controllers */,
 				3F420B3321C1A6C500BDA3EF /* models */,
 				3F420B1F21C1A30300BDA3EF /* AppDelegate.swift */,
@@ -118,6 +125,16 @@
 				3F5EE98C21C71E4C002686FF /* EditBasicStatsVC.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		3F5EE98F21C74100002686FF /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F5EE9A021C74327002686FF /* user_male.png */,
+				3F5EE99C21C742EB002686FF /* about.png */,
+				3F5EE99D21C742EB002686FF /* bar_chart.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		7C7AB5F671C35F20BEB07935 /* Frameworks */ = {
@@ -190,7 +207,10 @@
 			files = (
 				3F420B2C21C1A30400BDA3EF /* LaunchScreen.storyboard in Resources */,
 				3F420B2921C1A30400BDA3EF /* Assets.xcassets in Resources */,
+				3F5EE99F21C742EB002686FF /* bar_chart.png in Resources */,
+				3F5EE9A121C74327002686FF /* user_male.png in Resources */,
 				3F420B2721C1A30300BDA3EF /* Main.storyboard in Resources */,
+				3F5EE99E21C742EB002686FF /* about.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
