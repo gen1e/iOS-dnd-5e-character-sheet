@@ -9,7 +9,7 @@
 import RealmSwift
 
 class Character: Object {
-    @objc dynamic var playerName = ""
+    @objc dynamic var id = 0
     @objc dynamic var characterName = ""
     @objc dynamic var level = 0
     @objc dynamic var xp = 0
@@ -32,7 +32,7 @@ class Character: Object {
     @objc dynamic var spells: Spells?
     
     override static func primaryKey() -> String? {
-        return "characterName"
+        return "id"
     }
     
     public func getInitiative() -> Int {

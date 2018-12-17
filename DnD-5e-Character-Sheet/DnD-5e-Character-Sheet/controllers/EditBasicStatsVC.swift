@@ -50,6 +50,7 @@ class EditBasicStatsVC: UIViewController {
             let c = characters.first!
             print("Trying to save")
             try! realm.write {
+                c.characterName = characterNameField.text!
                 c.race = raceField.text!
                 c.characterClass = classField.text!
                 c.level = Int(lvlField.text!)!

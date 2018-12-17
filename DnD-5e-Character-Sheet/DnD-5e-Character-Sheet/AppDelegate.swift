@@ -36,29 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let realm = try! Realm()
         
-        let coreStats = CoreStats(value: ["strength": 18, "strengthProf": 1, "dexterity": 12, "dexterityProf": 0, "constitution": 18, "constitutionProf": 1, "intelligence": 10, "intelligenceProf": 0, "wisdom": 11, "wisdomProf": 0, "charisma": 9, "charismaProf": 0])
-        let healthStats = HealthStats(value: ["currentHP": 104, "maxHP": 106, "hitDiceType": "d12", "hitDiceMax": 14, "hitDiceCurr": 13])
-        let skills = Skills(value: ["acrobaticsProf": 0, "animalHandlingProf": 0, "arcanaProf": 0, "athleticsProf": 1, "deceptionProf": 0, "historyProf": 0, "insightProf": 0, "intimidationProf": 1, "investigationProf": 0, "medicineProf": 0, "natureProf": 0, "perceptionProf": 1, "performanceProf": 0, "persuasionProf": 0, "religionProf": 0, "sleightOfHandProf": 0, "stealthProf": 0, "survivalProf": 1])
-        let testChar = Character(value: ["playerName" : "Regina Locicero", "characterName": "Ulf", "level": 14, "xp": 0, "characterClass": "Barbarian", "race": "Goliath", "alignment": "Nuetral", "background": "Sailor", "speed": 40, "coreStats": coreStats, "healthStats": healthStats, "skills": skills, "ac": 19])
-        print(testChar.characterName)
-        print("Prof: \(testChar.getProficiency())")
-        print("Str: \(testChar.coreStats!.strength)")
-        print("Str Mod: \(testChar.coreStats!.getStrMod())")
-        print("Int Mod: \(testChar.coreStats!.getIntMod())")
-        print("Wis Mod: \(testChar.coreStats!.getWisMod())")
-        print("Char Mod: \(testChar.coreStats!.getCharMod())")
-        print("Health: \(testChar.healthStats!.currentHP) / \(testChar.healthStats!.maxHP)")
-        print("Str Save: \(testChar.coreStats!.getStrSave(prof: testChar.getProficiency()))")
-        print("Char Save: \(testChar.coreStats!.getCharSave(prof: testChar.getProficiency()))")
-        print("Perception: \(testChar.skills!.getPerception(wisMod: testChar.coreStats!.getWisMod(), prof: testChar.getProficiency()))")
-        
-//        try! realm.write {
-//            realm.add(testChar)
-//        }
+        //let coreStats = CoreStats(value: ["strength": 18, "strengthProf": 1, "dexterity": 12, "dexterityProf": 0, "constitution": 18, "constitutionProf": 1, "intelligence": 10, "intelligenceProf": 0, "wisdom": 11, "wisdomProf": 0, "charisma": 9, "charismaProf": 0])
+        //let healthStats = HealthStats(value: ["currentHP": 104, "maxHP": 106, "hitDiceType": "d12", "hitDiceMax": 14, "hitDiceCurr": 13])
+        //let skills = Skills(value: ["acrobaticsProf": 0, "animalHandlingProf": 0, "arcanaProf": 0, "athleticsProf": 1, "deceptionProf": 0, "historyProf": 0, "insightProf": 0, "intimidationProf": 1, "investigationProf": 0, "medicineProf": 0, "natureProf": 0, "perceptionProf": 1, "performanceProf": 0, "persuasionProf": 0, "religionProf": 0, "sleightOfHandProf": 0, "stealthProf": 0, "survivalProf": 1])
+        let core = CoreStats()
+        let health = HealthStats()
+        let skill = Skills()
+        let testChar = Character(value: ["id" : 0, "characterName": "Press Edit to Start", "coreStats": core, "healthStats": health, "skills": skill])
         
         let characters = realm.objects(Character.self)
-        print(characters)
-        
+        if characters.isEmpty {
+            try! realm.write {
+                realm.add(testChar)
+            }
+        }
         
         return true
     }
