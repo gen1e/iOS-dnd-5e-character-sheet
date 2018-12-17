@@ -41,6 +41,45 @@ class EditBasicStatsVC: UIViewController {
     @IBOutlet weak var charField: UITextField!
     @IBOutlet weak var charProfSwitch: UISwitch!
     
+    @IBAction func saveChangesClicked(_ sender: Any) {
+        let realm = try! Realm()
+        let characters = realm.objects(Character.self)
+        
+        if !characters.isEmpty {
+            // Then we want to update the character we have
+            let c = characters.first!
+            print("Trying to save")
+            try! realm.write {
+                c.race = raceField.text!
+                c.characterClass = classField.text!
+                c.level = Int(lvlField.text!)!
+                c.speed = Int(speedField.text!)!
+                c.ac = Int(acField.text!)!
+                c.healthStats!.maxHP = Int(maxHPField.text!)!
+                c.healthStats!.currentHP = Int(currHPField.text!)!
+                c.healthStats!.hitDiceMax = Int(maxHDField.text!)!
+                c.healthStats!.hitDiceCurr = Int(currHDField.text!)!
+                c.healthStats!.hitDiceType = hdtypeField.text!
+                
+                c.coreStats!.strength = Int(strField.text!)!
+                c.coreStats!.intelligence = Int(intField.text!)!
+                c.coreStats!.constitution = Int(conField.text!)!
+                c.coreStats!.wisdom = Int(wisField.text!)!
+                c.coreStats!.dexterity = Int(dexField.text!)!
+                c.coreStats!.charisma = Int(charField.text!)!
+                
+                c.coreStats!.strengthProf = profToStoreRealm(prof: strProfSwitch.isOn)
+                c.coreStats!.intelligenceProf = profToStoreRealm(prof: intProfSwitch.isOn)
+                c.coreStats!.constitutionProf = profToStoreRealm(prof: conProfSwitch.isOn)
+                c.coreStats!.wisdomProf = profToStoreRealm(prof: wisProfSwitch.isOn)
+                c.coreStats!.dexterityProf = profToStoreRealm(prof: dexProfSwitch.isOn)
+                c.coreStats!.charismaProf = profToStoreRealm(prof: charProfSwitch.isOn)
+            }
+            let characters = realm.objects(Character.self)
+            print(characters.first!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,6 +126,15 @@ class EditBasicStatsVC: UIViewController {
             return false
         }
     }
+    
+    private func profToStoreRealm(prof: Bool) -> Int {
+        if prof {
+            return 1
+        }
+        else {
+            return 0
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,14 +142,15 @@ class EditBasicStatsVC: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        print("Navigating")
+    }*/
 
 }

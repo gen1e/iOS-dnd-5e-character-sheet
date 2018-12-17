@@ -19,20 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Deletes everything when I need to reset
-        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
-        let realmURLs = [
-            realmURL,
-            realmURL.appendingPathExtension("lock"),
-            realmURL.appendingPathExtension("note"),
-            realmURL.appendingPathExtension("management")
-        ]
-        for URL in realmURLs {
-            do {
-                try FileManager.default.removeItem(at: URL)
-            } catch {
-                // handle error
-            }
-        }
+//        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+//        let realmURLs = [
+//            realmURL,
+//            realmURL.appendingPathExtension("lock"),
+//            realmURL.appendingPathExtension("note"),
+//            realmURL.appendingPathExtension("management")
+//        ]
+//        for URL in realmURLs {
+//            do {
+//                try FileManager.default.removeItem(at: URL)
+//            } catch {
+//                // handle error
+//            }
+//        }
         
         let realm = try! Realm()
         
@@ -52,9 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Char Save: \(testChar.coreStats!.getCharSave(prof: testChar.getProficiency()))")
         print("Perception: \(testChar.skills!.getPerception(wisMod: testChar.coreStats!.getWisMod(), prof: testChar.getProficiency()))")
         
-        try! realm.write {
-            realm.add(testChar)
-        }
+//        try! realm.write {
+//            realm.add(testChar)
+//        }
         
         let characters = realm.objects(Character.self)
         print(characters)

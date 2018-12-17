@@ -49,11 +49,16 @@ class BasicStatsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateView()
+        
+    }
+    
+    private func updateView() {
         let realm = try! Realm()
         let characters = realm.objects(Character.self)
         let c = characters.first!
         let p = c.getProficiency()
-
+        
         characterNameLabel.text = c.characterName
         subTitleLabel.text = c.race + " " + c.characterClass + " Level " + String(c.level)
         intitiativeLabel.text = String(c.getInitiative())
@@ -88,7 +93,6 @@ class BasicStatsVC: UIViewController {
         charStatLabel.text = String(c.coreStats!.charisma)
         charModLabel.text = modString(mod: c.coreStats!.getCharMod())
         charSaveLabel.text = modString(mod: c.coreStats!.getCharSave(prof: p))
-        
     }
     
     private func modString(mod: Int) -> String {
@@ -99,6 +103,10 @@ class BasicStatsVC: UIViewController {
             return "- \(abs(mod))"
         }
         return ""
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateView()
     }
 
     override func didReceiveMemoryWarning() {
